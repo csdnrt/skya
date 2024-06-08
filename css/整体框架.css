@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+audio{
+  width:180px;
+  height:40px;
+  left:10px;
+  top:38px;
+  position:absolute;
+  float:left;
+  z-index:4;}/*图层4*/
+.star{
+	float:left;
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-1;}/*图层5*/
+.star span{
+	width:4px;
+	height:4px;
+	background-color:#FFFFFF;
+	border-radius:20px;
+	box-shadow:0 0 0 4px rgba(255,0,0,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,1);
+	position:absolute;
+	top:35%;
+	right:40%;
+	animation:move 3s linear infinite;/*执行动画*/}
+/*流星划过动画*/
+@keyframes move{
+	0%{
+		transform:rotate(315deg) translateX(0px);
+		opacity:1;}
+	70%{
+		opacity:1;}
+	100%{
+		transform:rotate(315deg) translateX(-800px);
+		opacity:0;}}
+/*拖尾效果*/
+.star span::before{
+	content:'';
+	width:300px;
+	height:3px;
+	background:linear-gradient(90deg  #FFFFFF transparent);
+	position:absolute;
+	top:50%;
+	transform:translate(-50%);}
+.star span:nth-child(1){
+	top:0;
+	right:0;
+	animation-delay:0s;
+	animation-duration:1s;}
+.star span:nth-child(2){
+	top:0;
+	right:80px;
+	animation-delay:0.2s;
+	animation-duration:3s;}
+.star span:nth-child(3){
+	top:80px;
+	right:0;
+	animation-delay:0.4s;
+	animation-duration:2s;}
+.star span:nth-child(4){
+	top:0;
+	right:180px;
+	animation-delay:0.6s;
+	animation-duration:1.5s;}
+.star span:nth-child(5){
+	top:0;
+	right:400px;
+	animation-delay:0.8s;
+	animation-duration:2.5s;}
+.star span:nth-child(6){
+	top:0;
+	right:600px;
+	animation-delay:1s;
+	animation-duration:3s;}
+.star span:nth-child(7){
+	top:300px;
+	right:0;
+	animation-delay:1.2s;
+	animation-duration:1.75s;}
+.star span:nth-child(8){
+	top:0;
+	right:700px;
+	animation-delay:1.4s;
+	animation-duration:1.25s;}
+.star span:nth-child(9){
+	top:0;
+	right:1000px;
+	animation-delay:0.75s;
+	animation-duration:2.25s;}
+.star span:nth-child(10){
+	top:0;
+	right:450px;
+	animation-delay:2.75s;
+	animation-duration:2.25s;}
+		
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	font-family:"微软雅黑";
+	font-size:15px;
+	background:#232524;
+	text-align:center;}
+a{
+	text-decoration:none;
+	overflow:hidden;}
+
+/*导航栏*/
+.header{
+	width:100%;
+	height:40px;
+	min-width:600px;
+	background:#101010;
+	display:inline-block;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:6;}/*图层6*/
+.hbox{
+	width:70%;
+	margin:0 auto;}
+.title a{
+	font-size:19px;
+	font-weight:bold;
+	color:#BBBBBB;
+	margin:5px auto;
+	float:left;}
+.title a:hover{
+	color:#FFFFFF;}
+.menu{
+	float:right;
+	height:29px;
+	margin:5px auto;
+	display:inline;
+	padding:0;}
+.menu ul{
+	list-style:none;
+	display:inline;}
+.menu ul li{
+	float:left;
+	padding-left:20px;
+	padding-top:5px;}
+.menu ul li a{
+	font-size:14px;
+	color:#BBBBBB;}
+.menu ul li a:hover{
+	color:#FFFFFF;}
+	
+/*图片标题*/
+.bar{
+	width:100%;
+	height:150px;
+	position:relative;
+	top:40px;
+	z-index:1;}/*图层1*/
+.h-img{
+	width:100%;
+	height:150px;
+	margin:0 auto;}
+.bt1{
+	font-size:36px;
+	color:#fff;
+	position:absolute;
+	top:15px;
+	left:22%;}
+.bt2{
+	font-size:13px;
+	color:#fff;
+	position:absolute;
+	top:60px;
+	left:22%;
+	z-index:2;}/*图层2*/
+	
+/*主体*/
+.content{
+	width:100%;
+	height:auto;
+	position:relative;
+	top:0;}
+.bgimg{
+	width:100%;
+	height:auto;
+	margin:0 auto;
+	z-index:0;}/*图层0*/
+.content h2{
+	font-size:38px;
+	color:#FFFFFF;
+	margin:auto;
+	position:absolute;
+	top:120px;
+	left:35%;}
+.content h3{
+	font-size:14px;
+	font-weight:400;
+	color:#FFFFFF;
+	margin:auto;
+	position:absolute;
+	top:178px;
+	left:35%;}
+.bigbox{
+	width:70%;
+	height:auto;
+	margin:auto;
+	position:absolute;
+	top:250px;
+	left:18%;}
+.box{
+	float:left;
+	display:block;
+	width:19%;
+	height:455px;
+	margin-left:2%;
+	margin-right:2%;
+	margin-bottom:70px;
+	padding:4px;
+	border:1px solid #FFFFFF;
+	border-radius:4px;
+	box-shadow:10px 10px 6px #CCCCCC,-10px -10px 6px #CCCCCC,10px -10px 6px #CCCCCC,-10px 10px 6px #CCCCCC;}
+.box img{
+	max-width:100%;
+	margin:auto;
+	z-index:-1;
+	transition:0.3s linear;
+	transform:scale(1);
+	border-radius:10px;}/*图层-1*/
+.box img:hover{
+	transform:scale(1.2);}
+.box h4{
+	font-size:18px;
+	color:#FFFFFF;
+	margin:5px auto;}
+.box h4 a{
+	color:#FFCCFF;}
+.box h4 a:hover{
+	color:#FFFFFF;}
+.box h5{
+	font-size:14px;
+	color:#BBBBBB;
+	margin:9px auto;}
+.box p{
+	font-size:15px;
+	margin:16px;
+	color:#BBBBBB;}
+
+	
